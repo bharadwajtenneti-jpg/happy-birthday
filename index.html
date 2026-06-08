@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mounii ✨</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+overflow:hidden;
+height:100vh;
+
+background:black;
+
+font-family:'Poppins',sans-serif;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+color:white;
+
+position:relative;
+}
+
+/* BACKGROUND */
+
+.bg{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+overflow:hidden;
+}
+
+/* GLOW */
+
+.glow1,
+.glow2{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:0.5;
+}
+
+.glow1{
+
+width:450px;
+height:450px;
+
+background:#ff0080;
+
+top:-120px;
+left:-120px;
+
+animation:move1 8s infinite alternate ease-in-out;
+}
+
+.glow2{
+
+width:400px;
+height:400px;
+
+background:#7a00ff;
+
+bottom:-120px;
+right:-120px;
+
+animation:move2 8s infinite alternate ease-in-out;
+}
+
+@keyframes move1{
+
+from{
+transform:translateY(0px);
+}
+
+to{
+transform:translateY(60px);
+}
+}
+
+@keyframes move2{
+
+from{
+transform:translateY(0px);
+}
+
+to{
+transform:translateY(-60px);
+}
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+
+position:absolute;
+
+bottom:-50px;
+
+font-size:20px;
+
+animation:float linear infinite;
+
+opacity:0.8;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+}
+
+/* MAIN */
+
+.container{
+
+position:relative;
+
+z-index:10;
+
+width:90%;
+
+text-align:center;
+}
+
+/* COUNTDOWN */
+
+.count{
+
+font-size:10rem;
+
+font-weight:700;
+
+text-shadow:
+0 0 20px #ff4da6,
+0 0 50px #ff0080,
+0 0 100px #ff0080;
+
+animation:zoom 1s ease forwards;
+}
+
+@keyframes zoom{
+
+from{
+transform:scale(0.3);
+opacity:0;
+}
+
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+/* MESSAGE */
+
+.message{
+
+display:none;
+
+animation:fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* TITLE */
+
+.title{
+
+font-family:'Great Vibes',cursive;
+
+font-size:5.5rem;
+
+text-shadow:
+0 0 10px #ff66b3,
+0 0 30px #ff0080,
+0 0 60px #ff0080;
+
+animation:pulse 3s infinite;
+}
+
+@keyframes pulse{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.04);
+}
+}
+
+/* SUBTITLE */
+
+.subtitle{
+
+margin-top:20px;
+
+font-size:1.2rem;
+
+color:#ffe6f2;
+
+line-height:1.8;
+
+letter-spacing:1px;
+}
+
+/* MAGIC */
+
+.magic{
+
+margin-top:40px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+gap:35px;
+}
+
+/* HEART */
+
+.heart-glow{
+
+font-size:5rem;
+
+animation:pulseHeart 2s infinite;
+
+filter:
+drop-shadow(0 0 10px #ff4da6)
+drop-shadow(0 0 25px #ff0080);
+}
+
+@keyframes pulseHeart{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.25);
+}
+}
+
+/* BUTTERFLIES */
+
+.butterfly{
+
+font-size:3rem;
+
+animation:fly 3s infinite ease-in-out;
+}
+
+.left{
+animation-delay:0s;
+}
+
+.right{
+animation-delay:1.5s;
+}
+
+@keyframes fly{
+
+0%{
+transform:translateY(0px) rotate(-10deg);
+}
+
+50%{
+transform:translateY(-25px) rotate(10deg);
+}
+
+100%{
+transform:translateY(0px) rotate(-10deg);
+}
+}
+
+/* BOTTOM */
+
+.bottom{
+
+margin-top:35px;
+
+font-size:1rem;
+
+color:#ffd6ea;
+
+animation:blink 2s infinite alternate;
+}
+
+@keyframes blink{
+
+from{
+opacity:0.5;
+}
+
+to{
+opacity:1;
+}
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.count{
+font-size:7rem;
+}
+
+.title{
+font-size:3.5rem;
+}
+
+.subtitle{
+font-size:1rem;
+}
+
+.heart-glow{
+font-size:4rem;
+}
+
+.butterfly{
+font-size:2.3rem;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+
+<div class="bg">
+
+<div class="glow1"></div>
+<div class="glow2"></div>
+
+<!-- HEARTS -->
+
+<div class="heart" style="left:5%; animation-duration:8s;">❤</div>
+<div class="heart" style="left:15%; animation-duration:11s;">💖</div>
+<div class="heart" style="left:28%; animation-duration:9s;">❤</div>
+<div class="heart" style="left:40%; animation-duration:12s;">💘</div>
+<div class="heart" style="left:55%; animation-duration:8s;">❤</div>
+<div class="heart" style="left:70%; animation-duration:10s;">💖</div>
+<div class="heart" style="left:82%; animation-duration:13s;">❤</div>
+<div class="heart" style="left:92%; animation-duration:9s;">💘</div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="container">
+
+<!-- COUNTDOWN -->
+
+<div id="count" class="count">
+3
+</div>
+
+<!-- MESSAGE -->
+
+<div id="message" class="message">
+
+<div class="title">
+A Small Gift For You ✨
+</div>
+
+<div class="subtitle">
+Some moments are too special to be explained... 💖 <br>
+So I made this little surprise only for you 🌙
+</div>
+
+<!-- MAGIC -->
+
+<div class="magic">
+
+<div class="butterfly left">
+🦋
+</div>
+
+<div class="heart-glow">
+💖
+</div>
+
+<div class="butterfly right">
+🦋
+</div>
+
+</div>
+
+<div class="bottom">
+Cheers To 19 Beautiful Years 🎂
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* COUNTDOWN */
+
+const countElement =
+document.getElementById("count");
+
+const message =
+document.getElementById("message");
+
+let count = 3;
+
+const timer = setInterval(() => {
+
+count--;
+
+if(count > 0){
+
+countElement.innerHTML = count;
+
+countElement.style.animation = "none";
+
+void countElement.offsetWidth;
+
+countElement.style.animation =
+"zoom 1s ease forwards";
+
+}else{
+
+clearInterval(timer);
+
+countElement.style.display = "none";
+
+message.style.display = "block";
+
+setTimeout(() => {
+
+window.location.href = "page2.html";
+
+},5000);
+
+}
+
+},1000);
+
+</script>
+
+</body>
+</html>

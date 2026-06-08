@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Letter</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+height:100vh;
+
+overflow:hidden;
+
+background:#000;
+
+position:relative;
+}
+
+/* BACKGROUND IMAGE */
+
+.letter-bg{
+
+width:100vw;
+height:100vh;
+
+background-image:url('letter-bg.png');
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+/* LETTER AREA */
+
+.letter-text{
+
+position:absolute;
+
+top:150px;
+
+left:540px;
+
+width:390px;
+
+color:#241008;
+
+z-index:10;
+}
+
+/* TITLE */
+
+.title{
+
+font-size:34px;
+
+font-family:'Marck Script',cursive;
+
+font-weight:bold;
+
+margin-bottom:35px;
+
+text-align:center;
+
+opacity:0;
+
+animation:titlePop 1.5s ease forwards;
+}
+
+.heart{
+color:#d62828;
+display:inline-block;
+animation:heartbeat 1.5s infinite;
+}
+
+/* LETTER BODY */
+
+.letter-body{
+
+font-size:23px;
+
+line-height:1.85;
+
+white-space:pre-line;
+
+max-height:520px;
+
+overflow-y:auto;
+
+text-align:left;
+
+color:#241008;
+
+font-family:'Marck Script',cursive;
+
+letter-spacing:0.3px;
+
+padding-right:20px;
+
+opacity:0;
+
+animation:letterReveal 2.5s ease forwards;
+
+animation-delay:0.5s;
+}
+
+/* SCROLLBAR */
+
+.letter-body::-webkit-scrollbar{
+
+width:5px;
+}
+
+.letter-body::-webkit-scrollbar-thumb{
+
+background:
+rgba(60,30,10,.25);
+
+border-radius:10px;
+}
+
+/* FADE REVEAL */
+
+@keyframes letterReveal{
+
+0%{
+opacity:0;
+transform:translateY(30px) scale(0.97);
+}
+
+100%{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+}
+
+@keyframes titlePop{
+
+0%{
+opacity:0;
+transform:translateY(-20px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes heartbeat{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.2);
+}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.letter-text{
+
+top:115px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:75%;
+}
+
+.title{
+
+font-size:24px;
+}
+
+.letter-body{
+
+font-size:18px;
+
+max-height:420px;
+
+line-height:1.9;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="letter-bg"></div>
+
+<div class="letter-text">
+
+<div class="title">
+
+Dear Bujiiammaaa<span class="heart">❤️</span>
+
+</div>
+
+<div class="letter-body">
+
+🌟Bujiiammaaaaa Happiestt Birthdayy to you thalli ❤️!! Wish youu a great year ahead with a good health ammaa☺️. Ne dreams anni true avvali anni manasupurtiga ga korukuntuna🤗 ilanti bday's Nuv chala chesukovali. Last time ne bday baga cheyaledhu anne feeling ippudu kuda undi🥲 kani amma mana life lo chala ups and downs vastai manam deniki bayapadakunda undali Neku antu nenu unta ammaa, adhi emotional support , moral support edhina sare ne kosam nenu stand tesukunta ma🤞🏻. Nuv evari deggira bayapadaku...........
+firstly ela chepali em chepali annadi crt ga telidhu kani when u enter my life it becomes more enjoyable and comfortable with you😚 nijam ga anta oka kala ga undi ma ila nuv parchayam avvadam love cheyadam 1 year paiga avvadam it is totally a mixedup journey, ee jounery lo chala emotions ni carry chesam avvi kuda chala lessons ni nerpichayi😇 from starting day 1 nunchi ippudu varuku yeppduu bore ga feel avvaledhu amma, your are the greatest soul that I have ever seen before bangaramm🤎✨ nenu chala adrustam chesukuna amma nuv na life loki ravadam 🧬................
+Every sec and every minute ne kosam alochistha ammaa nuv Lekapote nenu lenu ammaa😩you are the one knows me Better than I knows my self❤️ nannaaa😟. I don't want to loossseee youuu thalli🥺 and nenu evari kosam ninnu mosam cheyanu amma adi ippudu aina furture lo aina raa🤞🏻. I will be always on your side👩‍❤️‍👩 i support youu in every situation❣️ and I will motivates uhh💖 i will gudies youu💟 and I will be for uhh on any time any situation🤞🏻❤️‍🩹 , alage nuv edhina tappu chesina nenu alane tidatha !! U are the one I always craves for youu🤗 naku ne  care, love, time, priority, anger, romance, support, and all the stuff💕 kavali. Manam iddaram bagundali manchinga chadhuvukovani mana love kosam fight chedam ma , me parents ma parents tho mataladi vallani convince Chesi opidam amma🥹 and edhina consequences vaste face chedam ma🫂. Nenu vachi atta Mavaya lu tho mataladi vallani convince cheyadaniki chustha amma opista ammaa nuv kuda stand tesukuntav ani annukutuna amma tesukuntav🫠 avasaram aite Mavaya atta kalu kuda pattukunta ammaaaa anthe gani ninnu vodhulukoni undatam ante kastam thallii😩 anthe gani edo situation vachindi nuv kopadav nuv Chiraku padav anni vodhulukonu ammaaa, manam prove chedam crt person mana chacheanta varuku mantho kalisi untaru anni⚰️ enta kastam vachina enni matalu anna ninnu vodhulukodaniki ready ga lenu amma🤞🏻 fight chedam ammaaa🤍🌹. Final ga anta baga jarigi oka chiti family tho roju santhosam gaa, navvuthu undali ma🥹🧑‍🧑‍🧒‍🧒❤️‍🩹........
+Lovee youuu soo much bujiiamma🩷🧿🦢 Mana iddari madhaya evaru rakunda chusukundam amma Neku nenu naku nuv anthe chalu amma third person aite mana jivatam loki ravinvadhu amma😫💓 enta kastam vachina mana iddaram kotukoni slove chesukundam anthe !! Manachi ga chadhuvukundam amma , job techukoni malataladuda amma oppidam amma kani gattiga fight cheyali Nuv strong ga undali amma sare na😥 edhina amma iddaram Kalisi chusukundam.... Loveeee youuu ammaaaluuuu💗💌 oncee again happiest Birthdayy ra naannnaaaa🥹❤️‍🩹✨ no disti for uhh🧿👻💋 stay healthy, enjoy thee Bday🎈🎂..  
+
+</div>
+
+</div>
+
+</body>
+
+</html>

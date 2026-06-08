@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Bujiiammaaa 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+height:100vh;
+overflow:hidden;
+
+font-family:'Poppins',sans-serif;
+
+background:
+radial-gradient(circle at top,#3b1020 0%,#17070d 45%,#050505 100%);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+position:relative;
+
+color:white;
+}
+
+/* =========================
+BACKGROUND GLOW
+========================= */
+
+.glow1,
+.glow2{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:0.18;
+}
+
+.glow1{
+
+width:450px;
+height:450px;
+
+background:#ff4f8b;
+
+top:-180px;
+left:-150px;
+}
+
+.glow2{
+
+width:420px;
+height:420px;
+
+background:#ff0066;
+
+bottom:-160px;
+right:-120px;
+}
+
+/* =========================
+LIGHT WIRES
+========================= */
+
+.lights{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+
+display:flex;
+justify-content:space-evenly;
+
+z-index:2;
+}
+
+.wire{
+
+width:180px;
+height:90px;
+
+border-bottom:3px solid rgba(255,255,255,0.16);
+
+border-radius:0 0 120px 120px;
+
+position:relative;
+}
+
+.bulb{
+
+position:absolute;
+
+bottom:-14px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:15px;
+height:15px;
+
+border-radius:50%;
+
+background:#ffd36b;
+
+box-shadow:
+0 0 12px #ffd36b,
+0 0 28px #ffd36b;
+
+animation:blink 1.4s infinite alternate;
+}
+
+@keyframes blink{
+
+from{
+opacity:0.4;
+}
+
+to{
+opacity:1;
+}
+}
+
+/* =========================
+REAL FIREWORKS
+========================= */
+
+.fireworks{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:4;
+}
+
+.firework{
+
+position:absolute;
+
+width:6px;
+height:6px;
+
+border-radius:50%;
+
+animation:blast 3s infinite;
+}
+
+.f1{
+top:12%;
+left:18%;
+animation-delay:0s;
+}
+
+.f2{
+top:10%;
+right:18%;
+animation-delay:1s;
+}
+
+.f3{
+top:6%;
+left:50%;
+animation-delay:2s;
+}
+
+@keyframes blast{
+
+0%{
+transform:scale(0.2);
+opacity:0;
+}
+
+15%{
+opacity:1;
+}
+
+100%{
+
+opacity:0;
+
+transform:scale(10);
+
+box-shadow:
+0 -100px #ffd166,
+0 100px #ff4f81,
+100px 0 #ffffff,
+-100px 0 #ffcc70,
+70px -70px #ff7eb3,
+-70px 70px #fff,
+70px 70px #ffcc70,
+-70px -70px #ff4f81;
+}
+}
+
+/* =========================
+MAIN
+========================= */
+
+.container{
+
+position:relative;
+
+z-index:20;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+text-align:center;
+}
+
+/* =========================
+TEXTS
+========================= */
+
+.top-text{
+
+margin-top:90px;
+
+font-size:1rem;
+
+line-height:1.9;
+
+color:#ffe8ef;
+
+animation:fadeUp 1.5s ease;
+}
+
+.title{
+
+margin-top:38px;
+
+font-size:3.3rem;
+
+font-weight:700;
+
+line-height:1.4;
+
+text-shadow:
+0 0 20px rgba(255,255,255,0.08),
+0 0 45px rgba(255,80,140,0.25);
+
+animation:fadeUp 2s ease;
+}
+
+.sub{
+
+margin-top:18px;
+
+font-size:1rem;
+
+line-height:1.8;
+
+color:#ffdce7;
+
+animation:fadeUp 2.3s ease;
+}
+
+/* =========================
+TEDDIES
+========================= */
+
+.teddy-row{
+
+margin-top:45px;
+
+display:flex;
+justify-content:center;
+align-items:flex-end;
+
+position:relative;
+}
+
+.teddy img{
+
+height:250px;
+
+object-fit:contain;
+
+mix-blend-mode:screen;
+
+filter:
+drop-shadow(0 14px 24px rgba(0,0,0,0.35));
+}
+
+.teddy-left{
+
+margin-right:-70px;
+
+z-index:2;
+}
+
+.teddy-center{
+
+z-index:5;
+}
+
+.teddy-right{
+
+margin-left:-70px;
+
+z-index:2;
+}
+
+/* =========================
+CANDLE
+========================= */
+
+.candle-area{
+
+margin-top:20px;
+
+display:flex;
+justify-content:center;
+}
+
+.candle{
+
+position:relative;
+
+width:16px;
+height:40px;
+
+border-radius:12px;
+
+background:
+linear-gradient(
+to bottom,
+#fff7db,
+#ffd56f,
+#ffb347
+);
+
+box-shadow:
+0 0 12px rgba(255,190,110,0.35),
+inset 0 0 10px rgba(255,255,255,0.45);
+}
+
+.flame{
+
+position:absolute;
+
+top:-15px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:12px;
+height:18px;
+
+background:
+radial-gradient(circle,#fff4b0 0%,#ff9d00 70%);
+
+border-radius:
+50% 50% 50% 50% / 60% 60% 40% 40%;
+
+box-shadow:
+0 0 16px #ffb347,
+0 0 28px #ff7b00;
+
+animation:flicker 0.7s infinite alternate;
+}
+
+@keyframes flicker{
+
+0%{
+
+transform:
+translateX(-50%)
+scale(1)
+rotate(-2deg);
+}
+
+100%{
+
+transform:
+translateX(-50%)
+scale(1.1)
+rotate(2deg);
+}
+}
+
+/* =========================
+BUTTON
+========================= */
+
+.wish-btn{
+
+margin-top:5px;
+
+padding:16px 38px;
+
+border:none;
+
+border-radius:50px;
+
+background:
+linear-gradient(to right,#ff5f9d,#ff0066);
+
+color:white;
+
+font-size:1rem;
+
+font-weight:500;
+
+cursor:pointer;
+
+transition:0.4s;
+
+box-shadow:
+0 0 25px rgba(255,90,145,0.35);
+}
+
+.wish-btn:hover{
+
+transform:scale(1.05);
+}
+
+/* =========================
+PHOTO CINEMA
+========================= */
+
+.photo-section{
+
+position:absolute;
+inset:0;
+
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+#12050b 0%,
+#1b0b13 25%,
+#090909 60%,
+#1a0612 100%
+);
+
+z-index:100;
+
+animation:photoFade 1.5s ease;
+}
+
+@keyframes photoFade{
+
+from{
+opacity:0;
+transform:scale(1.05);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+/* =========================
+AURORA BACKGROUND
+========================= */
+
+.memory-bg{
+
+position:absolute;
+inset:0;
+
+background:
+radial-gradient(circle at 20% 20%,
+rgba(255,80,140,0.18),
+transparent 30%),
+
+radial-gradient(circle at 80% 30%,
+rgba(255,255,255,0.06),
+transparent 30%),
+
+radial-gradient(circle at 50% 80%,
+rgba(255,0,102,0.14),
+transparent 35%);
+
+animation:bgMove 10s ease-in-out infinite alternate;
+
+filter:blur(40px);
+}
+
+@keyframes bgMove{
+
+from{
+transform:scale(1) translateY(0px);
+}
+
+to{
+transform:scale(1.1) translateY(-20px);
+}
+}
+
+/* =========================
+MEMORY CARD
+========================= */
+
+.memory-card{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+opacity:0;
+
+transition:1.8s ease;
+
+padding-bottom:120px;
+}
+
+.memory-card.active{
+
+opacity:1;
+}
+
+/* =========================
+CINEMATIC PHOTO STYLE
+========================= */
+
+.memory-card img{
+
+width:370px;
+height:470px;
+
+object-fit:cover;
+
+border-radius:28px;
+
+border:1px solid rgba(255,255,255,0.12);
+
+background:
+rgba(255,255,255,0.04);
+
+backdrop-filter:blur(12px);
+
+box-shadow:
+0 30px 80px rgba(0,0,0,0.75),
+0 0 45px rgba(255,80,140,0.18),
+inset 0 0 25px rgba(255,255,255,0.04);
+
+filter:
+brightness(1.02)
+contrast(1.05)
+saturate(1.08);
+
+position:relative;
+
+transform-style:preserve-3d;
+
+animation:
+cinemaFloat 6s ease-in-out infinite,
+cinemaZoom 10s ease-in-out infinite alternate;
+}
+
+@keyframes cinemaFloat{
+
+0%{
+transform:
+translateY(0px)
+rotate(-1deg);
+}
+
+50%{
+transform:
+translateY(-12px)
+rotate(1deg);
+}
+
+100%{
+transform:
+translateY(0px)
+rotate(-1deg);
+}
+}
+
+@keyframes cinemaZoom{
+
+from{
+scale:1;
+}
+
+to{
+scale:1.05;
+}
+}
+
+/* SIDE GLOW */
+
+.memory-card::before,
+.memory-card::after{
+
+content:"";
+
+position:absolute;
+
+width:250px;
+height:360px;
+
+border-radius:28px;
+
+background:
+rgba(255,255,255,0.03);
+
+backdrop-filter:blur(10px);
+
+z-index:-1;
+
+opacity:0.25;
+}
+
+.memory-card::before{
+
+left:12%;
+
+transform:
+rotate(-12deg)
+scale(0.9);
+}
+
+.memory-card::after{
+
+right:12%;
+
+transform:
+rotate(12deg)
+scale(0.9);
+}
+
+/* =========================
+TEXT
+========================= */
+
+.memory-text{
+
+margin-top:28px;
+
+text-align:center;
+
+font-size:1.1rem;
+
+line-height:1.9;
+
+color:#fff2f7;
+
+padding:0 30px;
+
+max-width:700px;
+
+text-shadow:
+0 0 18px rgba(255,255,255,0.12);
+
+animation:fadeUp 2s ease;
+}
+
+.final-text{
+
+font-size:2rem;
+font-weight:600;
+
+color:#ffd4e3;
+}
+
+/* =========================
+FINAL BUTTON
+========================= */
+
+.final-btn{
+
+position:absolute;
+
+top:35px;
+right:35px;
+
+padding:12px 24px;
+
+border:none;
+
+border-radius:40px;
+
+background:
+linear-gradient(to right,#ff5d98,#ff0066);
+
+color:white;
+
+font-size:0.9rem;
+
+font-weight:500;
+
+cursor:pointer;
+
+transition:0.4s;
+
+box-shadow:
+0 0 25px rgba(255,90,145,0.25);
+
+z-index:200;
+
+backdrop-filter:blur(10px);
+}
+
+.final-btn:hover{
+
+transform:scale(1.05);
+}
+
+/* =========================
+FLOATING HEARTS
+========================= */
+
+.hearts{
+
+position:absolute;
+
+inset:0;
+
+overflow:hidden;
+
+pointer-events:none;
+}
+
+.heart{
+
+position:absolute;
+
+bottom:-20px;
+
+font-size:18px;
+
+opacity:0.55;
+
+animation:floatUp linear infinite;
+}
+
+.heart:nth-child(1){
+left:10%;
+animation-duration:8s;
+}
+
+.heart:nth-child(2){
+left:25%;
+animation-duration:10s;
+}
+
+.heart:nth-child(3){
+left:45%;
+animation-duration:7s;
+}
+
+.heart:nth-child(4){
+left:70%;
+animation-duration:11s;
+}
+
+.heart:nth-child(5){
+left:88%;
+animation-duration:9s;
+}
+
+@keyframes floatUp{
+
+from{
+transform:translateY(0px);
+opacity:0;
+}
+
+20%{
+opacity:0.7;
+}
+
+100%{
+transform:translateY(-110vh);
+opacity:0;
+}
+}
+
+/* =========================
+ANIMATIONS
+========================= */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0px);
+}
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+.top-text{
+
+margin-top:120px;
+
+font-size:0.9rem;
+
+padding:0 20px;
+}
+
+.title{
+
+font-size:2.2rem;
+
+padding:0 18px;
+}
+
+.sub{
+
+font-size:0.9rem;
+
+padding:0 20px;
+}
+
+.teddy img{
+
+height:155px;
+}
+
+.teddy-left{
+
+margin-right:-38px;
+}
+
+.teddy-right{
+
+margin-left:-38px;
+}
+
+.wire{
+
+width:100px;
+height:55px;
+}
+
+.memory-card{
+
+padding-bottom:90px;
+}
+
+.memory-card img{
+
+width:285px;
+height:380px;
+}
+
+.memory-text{
+
+font-size:0.96rem;
+
+line-height:1.8;
+
+padding:0 24px;
+
+margin-top:22px;
+}
+
+.final-text{
+
+font-size:1.45rem;
+}
+
+.final-btn{
+
+top:18px;
+right:18px;
+
+padding:10px 18px;
+
+font-size:0.78rem;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="glow1"></div>
+<div class="glow2"></div>
+
+<div class="lights">
+
+<div class="wire"><div class="bulb"></div></div>
+<div class="wire"><div class="bulb"></div></div>
+<div class="wire"><div class="bulb"></div></div>
+<div class="wire"><div class="bulb"></div></div>
+<div class="wire"><div class="bulb"></div></div>
+
+</div>
+
+<div class="fireworks">
+
+<div class="firework f1"></div>
+<div class="firework f2"></div>
+<div class="firework f3"></div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="container" id="mainScene">
+
+<div class="top-text">
+“out of all the days in the year…<br>
+this one will always feel special to me 🤍🫂🧿”
+</div>
+
+<div class="title">
+Happiest Birthday Bujjiammaaa 😚💋🤍🧿
+</div>
+
+<div class="sub">
+every memory with you somehow became<br>
+softer, safer, and beautiful 🫂
+</div>
+
+<div class="teddy-row">
+
+<div class="teddy teddy-left">
+<img src="teddy-balloon.png">
+</div>
+
+<div class="teddy teddy-center">
+<img src="teddy-cake.png">
+</div>
+
+<div class="teddy teddy-right">
+<img src="teddy-heart.png">
+</div>
+
+</div>
+
+<div class="candle-area">
+
+<div class="candle">
+
+<div class="flame" id="flame"></div>
+
+</div>
+
+</div>
+
+<button class="wish-btn" onclick="blowCandle()">
+make a wish & blow the candle
+</button>
+
+</div>
+
+<!-- PHOTO SECTION -->
+
+<div class="photo-section" id="photoSection">
+
+<div class="memory-bg"></div>
+
+<div class="hearts">
+
+<div class="heart">🤍</div>
+<div class="heart">🫂</div>
+<div class="heart">✨</div>
+<div class="heart">🤍</div>
+<div class="heart">🌙</div>
+
+</div>
+
+<div class="memory-card active">
+
+<img src="photo1.jpg">
+
+<div class="memory-text">
+Maybe this was the moment<br>
+my heart quietly chose you 🤍
+</div>
+
+</div>
+
+<div class="memory-card">
+
+<img src="photo2.jpg">
+
+<div class="memory-text">
+every smile with you<br>
+felt like home 🫂
+</div>
+
+</div>
+
+<div class="memory-card">
+
+<img src="photo3.jpg">
+
+<div class="memory-text">
+with you… even chaos became beautiful 😚
+</div>
+
+</div>
+
+<div class="memory-card">
+
+<img src="photo4.jpg">
+
+<div class="memory-text">
+some people enter life softly…<br>
+and change everything 🌙
+</div>
+
+</div>
+
+<div class="memory-card">
+
+<img src="photo5.jpg">
+
+<div class="memory-text">
+in every lifetime,<br>
+i’d still find you again ❤️
+</div>
+
+</div>
+
+<div class="memory-card">
+
+<img src="photo6.jpg">
+
+<div class="memory-text final-text">
+Happy Birthday My Love 🎂🤍
+</div>
+
+</div>
+
+<button class="final-btn"
+onclick="window.location.href='page6.html'">
+
+Read My Letter 💌
+
+</button>
+
+</div>
+
+<script>
+
+/* =========================
+BLOW CANDLE
+========================= */
+
+function blowCandle(){
+
+document.getElementById("flame")
+.style.opacity = "0";
+
+setTimeout(() => {
+
+document.getElementById("mainScene")
+.style.opacity = "0";
+
+setTimeout(() => {
+
+document.getElementById("mainScene")
+.style.display = "none";
+
+document.getElementById("photoSection")
+.style.display = "flex";
+
+startMemories();
+
+},1000);
+
+},1200);
+}
+
+/* =========================
+MEMORY AUTO SLIDES
+========================= */
+
+const memories =
+document.querySelectorAll(".memory-card");
+
+let current = 0;
+
+function startMemories(){
+
+setInterval(() => {
+
+memories[current]
+.classList.remove("active");
+
+current =
+(current + 1) % memories.length;
+
+memories[current]
+.classList.add("active");
+
+},5000);
+
+}
+
+</script>
+
+</body>
+</html>

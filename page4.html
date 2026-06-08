@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Heartbeat Memories ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+height:100vh;
+overflow:hidden;
+
+font-family:'Poppins',sans-serif;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+radial-gradient(circle at top,#3d0018 0%,#12000c 45%,#000000 100%);
+
+position:relative;
+
+color:white;
+}
+
+/* GLOWS */
+
+.glow1,
+.glow2{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:0.22;
+}
+
+.glow1{
+
+width:420px;
+height:420px;
+
+background:#ff2f75;
+
+top:-150px;
+left:-120px;
+}
+
+.glow2{
+
+width:380px;
+height:380px;
+
+background:#ff0055;
+
+bottom:-140px;
+right:-120px;
+}
+
+/* PARTICLES */
+
+.particle{
+
+position:absolute;
+
+width:3px;
+height:3px;
+
+background:white;
+
+border-radius:50%;
+
+opacity:0.5;
+
+animation:float 4s infinite alternate ease-in-out;
+}
+
+@keyframes float{
+
+from{
+transform:translateY(0px);
+opacity:0.2;
+}
+
+to{
+transform:translateY(-18px);
+opacity:1;
+}
+}
+
+/* TITLE */
+
+.title{
+
+position:absolute;
+
+top:60px;
+
+width:100%;
+
+text-align:center;
+
+font-size:2.5rem;
+
+font-weight:600;
+
+letter-spacing:1px;
+}
+
+.sub{
+
+position:absolute;
+
+top:115px;
+
+width:100%;
+
+text-align:center;
+
+font-size:1rem;
+
+color:#ffd6e5;
+}
+
+/* NOTES */
+
+.note{
+
+position:absolute;
+
+padding:14px 22px;
+
+background:
+rgba(255,255,255,0.08);
+
+border:1px solid rgba(255,255,255,0.12);
+
+backdrop-filter:blur(14px);
+
+border-radius:20px;
+
+font-family:'Caveat',cursive;
+
+font-size:1.5rem;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+color:#fff0f5;
+
+box-shadow:
+0 0 20px rgba(255,77,136,0.08);
+
+animation:noteFloat 4s infinite ease-in-out;
+}
+
+.n1{
+top:22%;
+left:10%;
+transform:rotate(-6deg);
+}
+
+.n2{
+top:28%;
+right:10%;
+transform:rotate(5deg);
+}
+
+.n3{
+bottom:24%;
+left:14%;
+transform:rotate(-5deg);
+}
+
+.n4{
+bottom:20%;
+right:12%;
+transform:rotate(6deg);
+}
+
+@keyframes noteFloat{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-12px);
+}
+}
+
+/* MINI DECOR */
+
+.mini{
+
+position:absolute;
+
+font-family:'Caveat',cursive;
+
+font-size:1.3rem;
+
+color:rgba(255,240,245,0.75);
+
+animation:floatMini 4s infinite ease-in-out;
+}
+
+.m1{
+top:42%;
+left:18%;
+}
+
+.m2{
+top:38%;
+right:18%;
+}
+
+.m3{
+bottom:38%;
+left:22%;
+}
+
+.m4{
+bottom:35%;
+right:20%;
+}
+
+@keyframes floatMini{
+
+0%,100%{
+transform:translateY(0px);
+opacity:0.7;
+}
+
+50%{
+transform:translateY(-10px);
+opacity:1;
+}
+}
+
+/* HEART */
+
+.heart-container{
+
+position:relative;
+
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.main-heart{
+
+font-size:8rem;
+
+cursor:pointer;
+
+animation:heartbeat 1.5s infinite;
+
+filter:
+drop-shadow(0 0 30px rgba(255,77,136,0.8));
+
+transition:0.4s;
+}
+
+.main-heart:hover{
+
+transform:scale(1.08);
+}
+
+@keyframes heartbeat{
+
+0%{
+transform:scale(1);
+}
+
+25%{
+transform:scale(1.12);
+}
+
+40%{
+transform:scale(1);
+}
+
+60%{
+transform:scale(1.16);
+}
+
+100%{
+transform:scale(1);
+}
+}
+
+/* MEMORY CARD */
+
+.memory-card{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%)
+scale(0.7);
+
+width:88%;
+max-width:760px;
+
+padding:42px 30px;
+
+border-radius:34px;
+
+background:
+linear-gradient(
+145deg,
+rgba(28,12,20,0.88),
+rgba(14,6,12,0.82)
+);
+
+backdrop-filter:blur(22px);
+
+border:1px solid rgba(255,255,255,0.08);
+
+box-shadow:
+0 0 40px rgba(255,77,136,0.14);
+
+opacity:0;
+
+pointer-events:none;
+
+transition:0.5s;
+
+z-index:100;
+
+text-align:center;
+
+overflow:hidden;
+}
+
+.memory-card.active{
+
+opacity:1;
+
+pointer-events:auto;
+
+transform:
+translate(-50%,-50%)
+scale(1);
+}
+
+.memory-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-120px;
+left:-80px;
+
+width:240px;
+height:240px;
+
+background:#ff2f75;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:0.18;
+}
+
+/* MEMORY TITLE */
+
+.memory-title{
+
+font-size:2rem;
+
+margin-bottom:22px;
+
+font-weight:600;
+
+color:#ff9fbc;
+
+text-shadow:
+0 0 10px rgba(255,159,188,0.2);
+
+position:relative;
+z-index:5;
+}
+
+/* MEMORY TEXT */
+
+.memory-text{
+
+font-family:'Caveat',cursive;
+
+font-size:2rem;
+
+line-height:1.8;
+
+color:#fff4f8;
+
+position:relative;
+z-index:5;
+}
+
+/* BUTTONS */
+
+.buttons{
+
+margin-top:35px;
+
+display:flex;
+justify-content:center;
+gap:15px;
+
+position:relative;
+z-index:5;
+}
+
+.btn{
+
+padding:13px 26px;
+
+border:none;
+
+border-radius:40px;
+
+background:
+linear-gradient(to right,#ff4d88,#ff0055);
+
+color:white;
+
+font-size:1rem;
+
+cursor:pointer;
+
+font-weight:500;
+
+transition:0.3s;
+
+box-shadow:
+0 8px 18px rgba(255,77,136,0.22);
+}
+
+.btn:hover{
+
+transform:scale(1.05);
+}
+
+/* FINAL BUTTON */
+
+.final-btn-wrap{
+
+position:absolute;
+
+bottom:35px;
+
+width:100%;
+
+display:flex;
+justify-content:center;
+
+z-index:50;
+}
+
+.final-btn{
+
+padding:15px 32px;
+
+border:none;
+
+border-radius:50px;
+
+background:
+linear-gradient(to right,#ff4d88,#ff0055);
+
+color:white;
+
+font-size:1rem;
+
+font-weight:500;
+
+cursor:pointer;
+
+box-shadow:
+0 0 25px rgba(255,77,136,0.35);
+
+transition:0.5s;
+
+opacity:0;
+
+pointer-events:none;
+
+animation:buttonPulse 2s infinite;
+}
+
+.final-btn:hover{
+
+transform:scale(1.06);
+}
+
+@keyframes buttonPulse{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.05);
+}
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+body{
+padding:20px;
+}
+
+.title{
+font-size:1.8rem;
+top:40px;
+}
+
+.sub{
+top:85px;
+font-size:0.9rem;
+}
+
+.main-heart{
+font-size:6rem;
+}
+
+.note{
+font-size:1rem;
+padding:12px 16px;
+}
+
+.memory-title{
+font-size:1.5rem;
+}
+
+.memory-text{
+font-size:1.45rem;
+line-height:1.7;
+}
+
+.memory-card{
+padding:35px 22px;
+}
+
+.n1{
+top:18%;
+left:4%;
+}
+
+.n2{
+top:26%;
+right:4%;
+}
+
+.n3{
+bottom:22%;
+left:4%;
+}
+
+.n4{
+bottom:18%;
+right:4%;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- GLOWS -->
+
+<div class="glow1"></div>
+<div class="glow2"></div>
+
+<!-- PARTICLES -->
+
+<div class="particle" style="top:15%;left:20%;"></div>
+<div class="particle" style="top:25%;left:80%;"></div>
+<div class="particle" style="top:75%;left:30%;"></div>
+<div class="particle" style="top:85%;left:65%;"></div>
+
+<!-- TITLE -->
+
+<div class="title">
+Inside My Heart ❤️
+</div>
+
+<div class="sub">
+Every memory with you still beats here 🫶
+</div>
+
+<!-- FLOATING NOTES -->
+
+<div class="note n1">
+our beginning ✏️
+</div>
+
+<div class="note n2">
+late night talks 🌙
+</div>
+
+<div class="note n3">
+your messages 📱
+</div>
+
+<div class="note n4">
+the day i realized ❤️
+</div>
+
+<!-- MINI DECOR -->
+
+<div class="mini m1">
+you felt like peace 🌙
+</div>
+
+<div class="mini m2">
+my favorite notification 📱
+</div>
+
+<div class="mini m3">
+every moment still stays ❤️
+</div>
+
+<div class="mini m4">
+some people become home 🫶
+</div>
+
+<!-- HEART -->
+
+<div class="heart-container">
+
+<div class="main-heart" onclick="openMemory()">
+❤️
+</div>
+
+</div>
+
+<!-- MEMORY CARD -->
+
+<div class="memory-card" id="memoryCard">
+
+<div class="memory-title" id="memoryTitle">
+Our Beginning ✏️
+</div>
+
+<div class="memory-text" id="memoryText">
+
+You texted me because of a drawing... 🤍
+
+</div>
+
+<div class="buttons">
+
+<button class="btn" onclick="nextMemory()">
+next memory →
+</button>
+
+<button class="btn" onclick="closeMemory()">
+close ✨
+</button>
+
+</div>
+
+</div>
+
+<!-- FINAL BUTTON -->
+
+<div class="final-btn-wrap">
+
+<button id="finalBtn"
+class="final-btn"
+onclick="window.location.href='page5.html'">
+
+your birthday surprise awaits 🎂
+
+</button>
+
+</div>
+
+<script>
+
+const memoryTitles = [
+
+"Our Beginning ✏️",
+"That Smile 😊",
+"Late Night Talks 🌙",
+"The Day I Realized ❤️"
+
+];
+
+const memories = [
+
+`
+Oka drawing book naa jeevithani marchesthundi ani
+nenu eppudu anukoledu ✏️💫<br><br>
+
+Akkada nunchi mana journey ila beautiful ga
+start avuthundi ani kuda teliyadu 🫶<br><br>
+
+Love meedha interest leni mana iddaram
+ila kalavadam nijam ga magic la anipisthundi 🪄
+`,
+
+`
+Mataladanike chala siggu, bayam vachhedi 🤭<br><br>
+
+Naku ippatiki gurthu...
+Nov 11 2024 💌<br><br>
+
+Nuv navvina aa smile...
+inka ippatiki naa mind lo undi 😊
+`,
+
+`
+Days gadusthunna koddi mana bonding
+inka strong avthu vachindi 🌙🫶<br><br>
+
+Late night talks,
+jokes,
+fun,
+koncham love 💕<br><br>
+
+Night motham evariki teliyakunda
+mataladukovadam...
+naa life lo peak happiness 😭
+`,
+
+`
+Jan 23 2025... 🌌<br><br>
+
+Aa few minutes lo naku artham ayindi...
+nuv lekunda undalenu ani ❤️<br><br>
+
+Kaani malli nuv vachav...
+aa relief,
+aa happiness,
+nenu eppudu marchipolenu 💌
+`
+
+];
+
+let current = 0;
+
+function openMemory(){
+
+document.getElementById("memoryCard")
+.classList.add("active");
+
+document.getElementById("memoryText")
+.innerHTML = memories[current];
+
+document.getElementById("memoryTitle")
+.innerHTML = memoryTitles[current];
+}
+
+function closeMemory(){
+
+document.getElementById("memoryCard")
+.classList.remove("active");
+}
+
+function nextMemory(){
+
+current++;
+
+if(current >= memories.length){
+
+closeMemory();
+
+document.getElementById("finalBtn")
+.style.opacity = "1";
+
+document.getElementById("finalBtn")
+.style.pointerEvents = "auto";
+
+return;
+}
+
+document.getElementById("memoryText")
+.innerHTML = memories[current];
+
+document.getElementById("memoryTitle")
+.innerHTML = memoryTitles[current];
+}
+
+</script>
+
+</body>
+</html>

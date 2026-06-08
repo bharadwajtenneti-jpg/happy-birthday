@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Secret Access</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+height:100vh;
+overflow:hidden;
+
+font-family:'Poppins',sans-serif;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(to right,
+#000814 0%,
+#00154a 35%,
+#0030a8 100%);
+
+color:white;
+}
+
+/* PAGE FADE */
+
+body{
+
+animation:fadePage 1.2s ease;
+}
+
+@keyframes fadePage{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+}
+
+/* LEFT PHOTO ANIMATION */
+
+.left{
+
+animation:leftSlide 1.5s ease;
+}
+
+@keyframes leftSlide{
+
+from{
+
+opacity:0;
+
+transform:
+translateX(-120px)
+rotate(-10deg);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateX(0)
+rotate(-5deg);
+
+}
+}
+
+/* RIGHT KEYPAD ANIMATION */
+
+.right{
+
+animation:rightDrop 1.6s ease;
+}
+
+@keyframes rightDrop{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(-100px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+}
+
+/* MAIN */
+
+.container{
+
+width:90%;
+max-width:1300px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+gap:90px;
+}
+
+/* LEFT */
+
+.left{
+
+position:relative;
+}
+
+/* POLAROID */
+
+.polaroid{
+
+width:330px;
+
+background:white;
+
+padding:18px 18px 75px;
+
+border-radius:6px;
+
+transform:rotate(-5deg);
+
+box-shadow:
+0 20px 45px rgba(0,0,0,0.45);
+}
+
+.polaroid img{
+
+width:100%;
+
+height:auto;
+
+display:block;
+
+border-radius:3px;
+
+object-fit:contain;
+}
+
+.caption{
+
+margin-top:18px;
+
+text-align:center;
+
+color:#222;
+
+font-size:1.1rem;
+font-weight:500;
+}
+
+/* BOW */
+
+.bow{
+
+position:absolute;
+
+top:-35px;
+right:-20px;
+
+font-size:5rem;
+}
+
+/* TEDDY */
+
+.bear{
+
+position:absolute;
+
+bottom:-35px;
+left:-70px;
+
+font-size:6rem;
+}
+
+/* RIGHT */
+
+.right{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+/* TITLE */
+
+.title{
+
+font-size:2.3rem;
+font-weight:600;
+
+margin-bottom:30px;
+}
+
+/* PASS BOX */
+
+.pass-display{
+
+display:flex;
+gap:15px;
+
+margin-bottom:35px;
+}
+
+.box{
+
+width:65px;
+height:70px;
+
+border:2px solid rgba(255,255,255,0.7);
+
+border-radius:14px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:2rem;
+
+background:rgba(0,0,0,0.15);
+
+box-shadow:
+0 0 12px rgba(255,255,255,0.25);
+}
+
+/* KEYPAD */
+
+.keypad{
+
+display:grid;
+
+grid-template-columns:repeat(3,90px);
+
+gap:18px;
+}
+
+.key{
+
+width:90px;
+height:90px;
+
+border-radius:50%;
+
+border:2px solid rgba(255,255,255,0.35);
+
+background:transparent;
+
+color:white;
+
+font-size:2rem;
+
+cursor:pointer;
+
+transition:0.25s;
+}
+
+.key:hover{
+
+transform:scale(1.08);
+
+background:white;
+color:#003ec9;
+}
+
+.hint{
+
+margin-top:25px;
+
+font-size:1rem;
+
+color:#d7e3ff;
+}
+
+.error{
+
+margin-top:20px;
+
+color:#ff5a5a;
+
+display:none;
+}
+
+@media(max-width:900px){
+
+body{
+overflow:auto;
+padding:50px 0;
+}
+
+.container{
+
+flex-direction:column;
+gap:70px;
+}
+
+.polaroid{
+width:260px;
+}
+
+.polaroid img{
+height:300px;
+}
+
+.keypad{
+grid-template-columns:repeat(3,75px);
+}
+
+.key{
+width:75px;
+height:75px;
+}
+
+.box{
+width:55px;
+height:60px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LEFT -->
+
+<div class="left">
+
+<div class="polaroid">
+
+<img src="photo.jpg" alt="photo">
+
+<div class="caption">
+Our Favorite Memory 💙
+</div>
+
+</div>
+
+<div class="bow">🎀</div>
+
+<div class="bear">🧸</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="right">
+
+<div class="title">
+Enter a passcode 💙
+</div>
+
+<div class="pass-display">
+
+<div class="box" id="b1"></div>
+<div class="box" id="b2"></div>
+<div class="box" id="b3"></div>
+<div class="box" id="b4"></div>
+
+</div>
+
+<div class="keypad">
+
+<button class="key" onclick="press(1)">1</button>
+<button class="key" onclick="press(2)">2</button>
+<button class="key" onclick="press(3)">3</button>
+
+<button class="key" onclick="press(4)">4</button>
+<button class="key" onclick="press(5)">5</button>
+<button class="key" onclick="press(6)">6</button>
+
+<button class="key" onclick="press(7)">7</button>
+<button class="key" onclick="press(8)">8</button>
+<button class="key" onclick="press(9)">9</button>
+
+<button class="key" onclick="removeNum()">⌫</button>
+<button class="key" onclick="press(0)">0</button>
+<button class="key" onclick="checkPass()">✓</button>
+
+</div>
+
+<div class="hint">
+Hint : It's our special date 💙
+</div>
+
+<div class="error" id="error">
+❌ Try Again!
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let password = "";
+
+function updateBoxes(){
+
+document.getElementById("b1").innerHTML = password[0] || "";
+document.getElementById("b2").innerHTML = password[1] || "";
+document.getElementById("b3").innerHTML = password[2] || "";
+document.getElementById("b4").innerHTML = password[3] || "";
+
+}
+
+function press(num){
+
+if(password.length < 4){
+
+password += num;
+
+updateBoxes();
+}
+}
+
+function removeNum(){
+
+password = password.slice(0,-1);
+
+updateBoxes();
+}
+
+function checkPass(){
+
+const error = document.getElementById("error");
+
+if(password === "2107"){
+
+window.location.href = "page3.html";
+
+}else{
+
+error.style.display = "block";
+
+password = "";
+
+updateBoxes();
+
+setTimeout(() => {
+
+error.style.display = "none";
+
+},2000);
+
+}
+}
+
+</script>
+
+</body>
+</html>
